@@ -8,7 +8,7 @@ type Props = {
 };
 
 export const Title: VFC<Props> = memo((props) => {
-  const { children, numberOfLines = 2, size = 18 } = props;
+  const { children, numberOfLines, size } = props;
   return (
     <Text numberOfLines={numberOfLines} style={{ fontWeight: 'bold', fontSize: size }}>
       {children}
