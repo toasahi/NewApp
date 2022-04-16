@@ -1,5 +1,5 @@
 import React, { memo, VFC } from 'react';
-import { StatusBar, StyleSheet, View } from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet, Platform, View } from 'react-native';
 
 type Props = {
   children: React.ReactNode;
@@ -7,7 +7,15 @@ type Props = {
 
 export const Screen: VFC<Props> = memo((props) => {
   const { children } = props;
-  return <View style={styles.container}>{children}</View>;
+  return (
+    <>
+      {Platform.OS === 'android' ? (
+        <View style={styles.container}>{children}</View>
+      ) : (
+        <SafeAreaView style={styles.container}>{children}</SafeAreaView>
+      )}
+    </>
+  );
 });
 
 const styles = StyleSheet.create({
