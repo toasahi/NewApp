@@ -1,17 +1,18 @@
 import React, { memo, VFC } from 'react';
-import { Image, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import { Image, ImageStyle, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import { Title } from './Title';
 import { SubTitle } from './SubTitle';
 
 type Props = {
   style: StyleProp<ViewStyle>;
+  imageStyle: StyleProp<ImageStyle>;
 };
 
 export const BlockCard: VFC<Props> = memo((props) => {
-  const { style } = props;
+  const { style, imageStyle } = props;
   return (
     <View style={[styles.container, style]}>
-      <Image source={require('../../assets/defaultImage.jpeg')} style={styles.image} />
+      <Image source={require('../../assets/defaultImage.jpeg')} style={[styles.image, imageStyle]} />
       <View style={styles.contentContainer}>
         <Title numberOfLines={3} size={25}>
           Some Title
