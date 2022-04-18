@@ -29,3 +29,11 @@ export type descriptionNews = {
   publishedAt: string;
   content: string;
 };
+
+export type Dummy = {
+  id: string;
+  title: string;
+  desc: string;
+  thumbnail: string;
+  category: string;
+};

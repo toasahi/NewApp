@@ -1,8 +1,9 @@
 import React, { memo, useEffect, VFC } from 'react';
-import { FlatList, StyleSheet } from 'react-native';
+import { FlatList } from 'react-native';
 import { Title } from './Title';
 import { SmallCard } from './SmallCard';
 import { useGetNews } from '../hooks/useGetNews';
+import { data } from '../dummy/data';
 
 type Props = {
   title: string;
@@ -19,17 +20,13 @@ export const HorizontalList: VFC<Props> = memo((props) => {
       <Title size={20} numberOfLines={2}>
         {title}
       </Title>
-      {/*<FlatList*/}
-      {/*  data={news}*/}
-      {/*  keyExtractor={(item) => item.articles[0].source.name}*/}
-      {/*  horizontal*/}
-      {/*  showsHorizontalScrollIndicator={false}*/}
-      {/*  renderItem={({ item }) => <SmallCard item={item.articles[0]} />}*/}
-      {/*/>*/}
+      <FlatList
+        data={data}
+        keyExtractor={(item) => item.id}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        renderItem={({ item }) => <SmallCard {...item} />}
+      />
     </>
   );
-});
-
-const styles = StyleSheet.create({
-  container: {},
 });
