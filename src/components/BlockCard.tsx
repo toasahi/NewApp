@@ -1,15 +1,21 @@
-import React, { memo, VFC } from 'react';
+import React, { memo, useEffect, VFC } from 'react';
 import { Image, ImageStyle, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import { Title } from './Title';
 import { SubTitle } from './SubTitle';
+import { useGetNews } from '../hooks/useGetNews';
 
 type Props = {
   style: StyleProp<ViewStyle>;
-  imageStyle: StyleProp<ImageStyle>;
+  imageStyle?: StyleProp<ImageStyle>;
 };
 
 export const BlockCard: VFC<Props> = memo((props) => {
   const { style, imageStyle } = props;
+  const { getNews, news } = useGetNews();
+  useEffect(() => {
+    getNews();
+  }, []);
+  // console.log(news);
   return (
     <View style={[styles.container, style]}>
       <Image source={require('../../assets/defaultImage.jpeg')} style={[styles.image, imageStyle]} />
