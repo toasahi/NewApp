@@ -5,7 +5,6 @@ import { API_KEY } from '@env';
 
 export const useGetNews = () => {
   const [news, setNews] = useState<Array<News>>([]);
-  console.log(API_KEY);
   const getNews = useCallback(() => {
     axios
       .get<Array<News>>(API_KEY)
