@@ -23,7 +23,6 @@ DerivedData
 
 # Android/IntelliJ
 #
-build/
 .idea
 .gradle
 local.properties
@@ -65,3 +64,4 @@ node_modules
 android
 ios
 assets
+/.env
