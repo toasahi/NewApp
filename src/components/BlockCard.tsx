@@ -14,7 +14,7 @@ export const BlockCard: VFC<Props> = memo((props) => {
   const { style, imageStyle, data } = props;
   return (
     <View style={[styles.container, style]}>
-      <Image source={require('../../assets/defaultImage.jpeg')} style={[styles.image, imageStyle]} />
+      <Image source={{ uri: data.thumbnail }} style={[styles.image, imageStyle]} />
       <View style={styles.contentContainer}>
         <Title numberOfLines={3} size={25}>
           {data.title}
