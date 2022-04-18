@@ -7,8 +7,7 @@ const { width } = Dimensions.get('window');
 
 export const SmallCard: VFC<Dummy> = memo((props) => {
   const { ...item } = props;
-  console.log(item);
-  return <BlockCard style={styles.container} imageStyle={styles.image} />;
+  return <BlockCard style={styles.container} imageStyle={styles.image} data={item} />;
 });
 
 const styles = StyleSheet.create({
