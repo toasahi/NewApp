@@ -1,10 +1,15 @@
 import React, { memo } from 'react';
-import { View, Text } from 'react-native';
+import { SearchBar } from './SearchBar';
+import { FeaturedNews } from './FeaturedNews';
+import { BreakingNews } from './BreakingNews';
+import { Screen } from './Screen';
 
 export const Home = memo(() => {
   return (
-    <View>
-      <Text>ホーム画面</Text>
-    </View>
+    <Screen>
+      <SearchBar />
+      <FeaturedNews />
+      <BreakingNews />
+    </Screen>
   );
 });
