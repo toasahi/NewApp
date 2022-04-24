@@ -37,3 +37,9 @@ export type Dummy = {
   thumbnail: string;
   category: string;
 };
+
+export type ArticleResponse = {
+  status: string;
+  totalResults: number;
+  articles: { title: string; url: string }[];
+};

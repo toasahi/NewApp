@@ -12,10 +12,11 @@ type Props = {
 
 export const HorizontalList: VFC<Props> = memo((props) => {
   const { title, data } = props;
-  const { getNews } = useGetNews();
+  const { getNews, news } = useGetNews();
   useEffect(() => {
     getNews();
   }, [getNews]);
+  console.log(news?.articles[1]);
   return (
     <>
       <Title size={20} numberOfLines={2}>

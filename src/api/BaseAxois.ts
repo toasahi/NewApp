@@ -1,10 +1,11 @@
 import baseAxios, { AxiosRequestConfig } from 'axios';
-import { API_URL } from '@env';
+import { API_KEY, API_URL } from '@env';
 
 export const DefaultAxiosConfig: AxiosRequestConfig = {
-  baseURL: API_URL,
+  baseURL: API_URL + API_KEY,
   headers: {
-    'Content-Type': 'application/x-www-form-urlencoded',
+    'Content-Type': 'application/json',
+    'X-Requested-With': 'XMLHttpRequest',
   },
   responseType: 'json',
 };
