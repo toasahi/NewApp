@@ -1,19 +1,28 @@
+// export type News = {
+//   articles: [
+//     {
+//       source: {
+//         id: null;
+//         name: string;
+//       };
+//       author: null;
+//       title: string;
+//       description: string;
+//       url: string;
+//       urlToImage: string;
+//       publishedAt: string;
+//       content: string;
+//     },
+//   ];
+// };
+
 export type News = {
-  articles: [
-    {
-      source: {
-        id: null;
-        name: string;
-      };
-      author: null;
-      title: string;
-      description: string;
-      url: string;
-      urlToImage: string;
-      publishedAt: string;
-      content: string;
-    },
-  ];
+  title: string;
+  url: string;
+  urlToImage: string;
+  publishedAt: string;
+  description: string;
+  content: string;
 };
 
 export type descriptionNews = {
@@ -41,5 +50,12 @@ export type Dummy = {
 export type ArticleResponse = {
   status: string;
   totalResults: number;
-  articles: { title: string; url: string; publishedAt: string; description: string; content: string }[];
+  articles: {
+    title: string;
+    url: string;
+    publishedAt: string;
+    description: string;
+    content: string;
+    urlToImage: string;
+  }[];
 };
