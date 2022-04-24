@@ -1,9 +1,10 @@
 import { useCallback, useState } from 'react';
-import { ArticleResponse } from '../types/News';
+import { ArticleResponse, News } from '../types/News';
 import { axios } from '../api/BaseAxois';
 
 export const useGetNews = () => {
   const [news, setNews] = useState<ArticleResponse>();
+  const [suggestNews, setSuggestNews] = useState<News>();
   const getNews = useCallback(() => {
     axios
       .get<ArticleResponse>('')
@@ -11,5 +12,12 @@ export const useGetNews = () => {
       .catch(() => console.log('error'));
   }, []);
 
-  return { getNews, news };
+  const getSuggestNews = useCallback(() => {
+    axios
+      .get<ArticleResponse>('')
+      .then((result) => setSuggestNews(result.data.articles[0]))
+      .catch(() => console.log('error'));
+  }, []);
+
+  return { getNews, news, getSuggestNews, suggestNews };
 };

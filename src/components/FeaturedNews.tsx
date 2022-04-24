@@ -1,7 +1,12 @@
-import React, { memo, VFC } from 'react';
+import React, { memo, useEffect, VFC } from 'react';
 import { BlockCard } from './BlockCard';
 import { data } from '../dummy/data';
+import { useGetNews } from '../hooks/useGetNews';
 
 export const FeaturedNews: VFC = memo(() => {
-  return <BlockCard data={data[0]} style={{ marginVertical: 15 }} />;
+  const { getSuggestNews, suggestNews } = useGetNews();
+  useEffect(() => {
+    getSuggestNews();
+  }, [getSuggestNews]);
+  return <BlockCard data={suggestNews === undefined ? data[0] : suggestNews} style={{ marginVertical: 15 }} />;
 });
