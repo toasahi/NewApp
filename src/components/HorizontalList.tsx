@@ -16,7 +16,7 @@ export const HorizontalList: VFC<Props> = memo((props) => {
   useEffect(() => {
     getNews();
   }, [getNews]);
-  console.log(news?.articles[1]);
+  console.log(news?.articles[0].content);
   return (
     <>
       <Title size={20} numberOfLines={2}>

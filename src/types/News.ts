@@ -41,5 +41,5 @@ export type Dummy = {
 export type ArticleResponse = {
   status: string;
   totalResults: number;
-  articles: { title: string; url: string }[];
+  articles: { title: string; url: string; publishedAt: string; description: string; content: string }[];
 };

@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { ArticleResponse, News } from '../types/News';
+import { ArticleResponse } from '../types/News';
 import { axios } from '../api/BaseAxois';
 
 export const useGetNews = () => {
