@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 8,
     justifyContent: 'center',
+    marginTop: 15,
   },
 
   searchInput: {
